@@ -12,6 +12,8 @@ Options:
 
 from docopt import docopt
 
+from core.mortgage import Mortgage
+
 # https://www.financevpraxi.cz/finance-hypotecni-uver
 # https://is.muni.cz/th/hlx9x/Plny_text_prace.pdf
 # https://www2.karlin.mff.cuni.cz/~portal/fin_mat/?page=anuita
@@ -23,12 +25,9 @@ def main():
 
     if args['basic']:
 
-        vyska_uveru = float(args['<uver>'])
-        uroky = float(args['<uroky>'])
-        doba = float(args['<doba>'])
+        mortgage = Mortgage(int(args['<uver>']), float(args['<uroky>']), int(args['<doba>']))
+        print('Splatka: {:.2f}'.format(mortgage.anuita()))
 
-        splatka= vyska_uveru * (uroky / (1.0 - pow((1/(1+uroky )), doba)) )
-        print(splatka/12.0)
 
 if __name__ == '__main__':
     main()
