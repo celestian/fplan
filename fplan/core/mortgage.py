@@ -13,8 +13,8 @@ class Mortgage:
 
     def anuita(self):
 
-        q = 1.0 + self._interest_rate
-        qn = pow(q, self._loan_length)
-        a = self._loan_amount * qn * (q - 1.0) / float((qn - 1.0))
+        i_pm = self._interest_rate/12.0
+        q = pow(1.0 + i_pm, 12.0 * self._loan_length)
+        a = self._loan_amount * i_pm * q / (q - 1.0)
 
-        return a / 12.0
+        return a
