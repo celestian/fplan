@@ -46,3 +46,7 @@ class Mortgage:
         for i in range(0, 12 * self._loan_length + 1):
 
             print('{} {:.2f} {:.2f} {:.2f} {:.2f}'.format(i, self.anuita(), self.urok(i), self.umor(i), self.zustatek(i)))
+
+    def summary(self, k):
+
+        print('{} {:.2f} {:.2f} {:.2f} {:.2f}'.format(k, self.anuita(), self.urok(k), self.umor(k), self.zustatek(k)))

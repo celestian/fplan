@@ -28,7 +28,7 @@ def main():
         mortgage = Mortgage(int(args['<uver>']), float(args['<uroky>']), int(args['<doba>']))
         print('Splatka: {:.2f}'.format(mortgage.anuita()))
 
-        mortgage.calendar()
+        mortgage.summary(12*7)
 
 
 if __name__ == '__main__':
