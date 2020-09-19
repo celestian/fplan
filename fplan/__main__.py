@@ -28,6 +28,8 @@ def main():
         mortgage = Mortgage(int(args['<uver>']), float(args['<uroky>']), int(args['<doba>']))
         print('Splatka: {:.2f}'.format(mortgage.anuita()))
 
+        mortgage.calendar()
+
 
 if __name__ == '__main__':
     main()
